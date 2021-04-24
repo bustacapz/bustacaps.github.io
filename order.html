@@ -1,0 +1,153 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+    body {
+    background-color: #1e2128;
+}
+
+/* .container {
+    width: 600px;
+    background-color: #22262d;
+    padding-top: 100px;
+    padding-bottom: 100px
+} */
+
+.card {
+    background-color: rgba(0,0,0,0.7);
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.name {
+    font-size: 15px;
+    color: #403f3f;
+    font-weight: bold
+}
+
+.cross {
+    font-size: 11px;
+    color: #b0aeb7
+}
+
+.pin {
+    font-size: 14px;
+    color: #b0aeb7
+}
+
+.first {
+    border-radius: 8px;
+    border: 1.5px solid #78b9ff;
+    color: #000;
+    background-color: #eaf4ff
+}
+
+.second {
+    border-radius: 8px;
+    border: 1px solid #acacb0;
+    color: #000;
+    background-color: #fff
+}
+
+.dot {}
+
+.head {
+    color: #137ff3;
+    font-size: 12px
+}
+
+.dollar {
+    font-size: 18px;
+    color: #097bf7
+}
+
+.amount {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 18px
+}
+
+.form-control {
+    font-size: 18px;
+    font-weight: bold;
+    width: 60px;
+    height: 28px
+}
+
+.back {
+    color: #aba4a4;
+    font-size: 15px;
+    line-height: 73px;
+    font-weight: 400
+}
+
+
+.backdrop {
+    border-radius:1rem!important
+    width: 100%;
+    height: 100%;
+}
+
+.primary-btn {
+    color: #f0f8ff;
+    border-color: rgba(0,0,0,0.0);
+    text-align: center;
+    border-radius: 0.8rem;
+    line-height: 1.4rem;
+    margin-top: .4rem;
+    margin-bottom: .8rem;
+    letter-spacing: .35px;
+    font: 500 13.3333px Arial;
+    background: linear-gradient(90deg,#27b18a,#27b19a);
+    transition: all .3s ease-out;
+    /**box-shadow: 0 0 8px 0 rgb(39 177 138 / 37%);**/
+}
+.primary-btn:hover {
+    filter: brightness(1.15);
+    border-color: rgba(0,0,0,0.0);
+}
+#myVideo {
+    position: fixed;
+    z-index: -1;
+    object-fit:fill;
+}
+</style>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="1.mp4" type="video/mp4">
+    </video>
+    <div class="container d-flex align-items-center backdrop">
+    <div class="container d-flex justify-content-center">
+        <div class="card order">
+            <div>
+                <div class="d-flex pt-3 pl-3">
+                    <div><img src="logo.svg" width="60" height="80" /></div>
+                    <div class="mt-3 pl-2"><span class="name">Martina Thomas</span>
+                        <div><span class="cross">&#10005&#10005&#10005&#10005</span><span class="pin ml-2">8880</span></div>
+                    </div>
+                </div>
+                <div class="py-2 px-3">
+                    <div class="first pl-2 d-flex py-2">
+                        <div class="form-check"> <input type="radio" name="optradio" class="form-check-input mt-3 dot" checked> </div>
+                        <div class="border-left pl-2"><span class="head">Total amount due</span>
+                            <div><span class="dollar">$</span><span class="amount">8245</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-2 px-3">
+                    <div class="second pl-2 d-flex py-2">
+                        <div class="form-check"> <input type="radio" name="optradio" class="form-check-input mt-3 dot"> </div>
+                        <div class="border-left pl-2"><span class="head">Other amount</span>
+                            <div class="d-flex"><span class="dollar">$</span><input type="text" name="text" class="form-control ml-1" placeholder="0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between px-3 pt-4 pb-3">
+                    <div><span class="back">Go back</span></div> 
+                    <button type="button" class="primary-btn">PAY AMOUNT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
