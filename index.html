@@ -1,92 +1,91 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<style>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html,
     body {
-    background-color: #1e2128;
-}
+      position: relative;
+      height: 100%;
+    }
 
-/* .container {
-    width: 600px;
-    background-color: #22262d;
-    padding-top: 100px;
-    padding-bottom: 100px
-} */
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-.card {
-    background-color: rgba(0,0,0,0.7);
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
+    .swiper-container {
+      width: 100%;
+      height: 100%;
 
-.name {
-    font-size: 15px;
-    color: #403f3f;
-    font-weight: bold
-}
+    }
 
-.cross {
-    font-size: 11px;
-    color: #b0aeb7
-}
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
 
-.pin {
-    font-size: 14px;
-    color: #b0aeb7
-}
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
 
-.first {
-    border-radius: 8px;
-    border: 1.5px solid #78b9ff;
-    color: #000;
-    background-color: #eaf4ff
-}
+    .slide-1 {
+        background-image: url('slide-pink.jpg');
+    }
+    .slide-2 {
+        background-image: url('slide-blue.jpg');
+    }
+    .slide-3 {
+        background-image: url('slide-gold.jpg');
+    }
+    .back {
+        color: #aba4a4;
+        font-size: 15px;
+        line-height: 73px;
+        font-weight: 400
+    }
 
-.second {
-    border-radius: 8px;
-    border: 1px solid #acacb0;
-    color: #000;
-    background-color: #fff
-}
-
-.dot {}
-
-.head {
-    color: #137ff3;
-    font-size: 12px
-}
-
-.dollar {
-    font-size: 18px;
-    color: #097bf7
-}
-
-.amount {
-    color: #007bff;
-    font-weight: bold;
-    font-size: 18px
-}
-
-.form-control {
-    font-size: 18px;
-    font-weight: bold;
-    width: 60px;
-    height: 28px
-}
-
-.back {
-    color: #aba4a4;
-    font-size: 15px;
-    line-height: 73px;
-    font-weight: 400
-}
-
-
-.backdrop {
-    border-radius:1rem!important
-    width: 100%;
-    height: 100%;
-}
+    .backdrop {
+        border-radius:1rem!important;
+    }
+    .card {
+        background-color: rgba(0,0,0,0.7);
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    }
+    .card-title {
+        color: white;
+    }
+    .card-text {
+        color: white;
+    }
 
 .primary-btn {
     color: #f0f8ff;
@@ -106,48 +105,70 @@
     filter: brightness(1.15);
     border-color: rgba(0,0,0,0.0);
 }
-#myVideo {
-    position: fixed;
-    z-index: -1;
-    object-fit:fill;
-}
-</style>
+  </style>
+</head>
+
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="1.mp4" type="video/mp4">
-    </video>
-    <div class="container d-flex align-items-center backdrop">
-    <div class="container d-flex justify-content-center">
-        <div class="card order">
-            <div>
-                <div class="d-flex pt-3 pl-3">
-                    <div><img src="logo.svg" width="60" height="80" /></div>
-                    <div class="mt-3 pl-2"><span class="name">Martina Thomas</span>
-                        <div><span class="cross">&#10005&#10005&#10005&#10005</span><span class="pin ml-2">8880</span></div>
-                    </div>
-                </div>
-                <div class="py-2 px-3">
-                    <div class="first pl-2 d-flex py-2">
-                        <div class="form-check"> <input type="radio" name="optradio" class="form-check-input mt-3 dot" checked> </div>
-                        <div class="border-left pl-2"><span class="head">Total amount due</span>
-                            <div><span class="dollar">$</span><span class="amount">8245</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="py-2 px-3">
-                    <div class="second pl-2 d-flex py-2">
-                        <div class="form-check"> <input type="radio" name="optradio" class="form-check-input mt-3 dot"> </div>
-                        <div class="border-left pl-2"><span class="head">Other amount</span>
-                            <div class="d-flex"><span class="dollar">$</span><input type="text" name="text" class="form-control ml-1" placeholder="0"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between px-3 pt-4 pb-3">
-                    <div><span class="back">Go back</span></div> 
-                    <button type="button" class="primary-btn">PAY AMOUNT</button>
-                </div>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide-1">
+        <div class="card backdrop" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">TOP 5</h5>
+              <p class="card-text">The 5 largest contributions can claim this exclusive horse</p>
+              <button type="button" onclick="window.location.href='/order.html'" class="primary-btn">Participate</button>
             </div>
+          </div>
         </div>
+      <div class="swiper-slide slide-2">
+        <div class="card backdrop" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">FASTEST 20</h5>
+              <p class="card-text">The first 20 contributions can claim this exclusive horse</p>
+              <button type="button" onclick="window.location.href='/order.html'" class="primary-btn">Participate</button>
+            </div>
+          </div>
+      </div>
+      <div class="swiper-slide slide-3">
+        <div class="card backdrop" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">EARLY ADOPTERS</h5>
+              <p class="card-text">All participants can claim this exclusive horse</p>
+              <button type="button" onclick="window.location.href='/order.html'" class="primary-btn">Participate</button>
+            </div>
+          </div>
+      </div>
     </div>
-    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 5500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
 </body>
+
+</html>
