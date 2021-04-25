@@ -112,18 +112,22 @@ body {
     object-fit:fill;
     min-width: 100%;
     min-height: 100%;
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-overflow-style: none;
+}
+#myVideo::-webkit-scrollbar {
+    display: none;
 }
 </style>
 <body>
     <video autoplay muted loop id="myVideo">
-        <source src="1.mp4" type="video/mp4">
+        <source src="1-flip.mp4" type="video/mp4">
     </video>
-    <div class="container-fluid d-flex align-items-center backdrop">
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container d-flex align-items-center backdrop">
+    <div class="container d-flex justify-content-center">
         <div class="card order">
             <div>
                 <div class="d-flex pt-3 pl-3">
