@@ -3,6 +3,6 @@
     src: url(Lustra.otf);
   }
 
-.card-text {
+.card-text, .card-title {
     font-family: Lustra;
 }
