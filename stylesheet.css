@@ -6,3 +6,7 @@
 .card-text, .card-title {
     font-family: Lustra;
 }
+
+.card-text {
+    font-size: 12px;
+}
