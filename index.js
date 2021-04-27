@@ -170,7 +170,7 @@ function truncateGwei(wei) {
     }
     return new BigNumber(web3.utils.fromWei(wei, 'ether')).decimalPlaces(0).toFormat(fmt);
 }
-w
+
 function updateStatus(status) {
     const statusEl = document.getElementById('status');
     statusEl.innerHTML = status;
