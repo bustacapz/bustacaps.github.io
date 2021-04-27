@@ -2,6 +2,7 @@
 
 var ethBalance
 var zedBalance
+var web3
 
 var tokenContract = '0x11003E410ca3FcD220765B3d2f343433A0b2bffd';
 var tokenAbi = [
