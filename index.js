@@ -2,8 +2,8 @@
 
 var ethBalance
 var zedBalance
-var web3
 
+var tokenprice = '10000000000000000';
 var tokenContract = '0x11003E410ca3FcD220765B3d2f343433A0b2bffd';
 var tokenAbi = [
     {
@@ -170,7 +170,6 @@ function updateStatus(status) {
 async function loadWeb3() {
     if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
-        ethBalance = window.web3.getBalance('0x27B53099E9a2339748AB6D5ebF63DDBC181b93A2')
         window.ethereum.autoRefreshOnNetworkChange = false;
         window.ethereum.enable();
     }
@@ -219,3 +218,4 @@ load();
 
 // window.ethereum.isMetaMask
 // window.ethereum.selectedAddress
+// window.web3.eth.getBalance(window.ethereum.selectedAddress);
