@@ -1,6 +1,5 @@
 
 
-var accounts
 var ethBalance
 var zedBalance
 
@@ -161,16 +160,6 @@ var tokenAbi = [
     }
 ]
 
-function truncateGwei(wei) {
-    fmt = {
-        prefix: '=> ',
-        decimalSeparator: '.',
-        groupSeparator: ',',
-        groupSize: 3
-    }
-    return new BigNumber(web3.utils.fromWei(wei, 'ether')).decimalPlaces(0).toFormat(fmt);
-}
-
 function updateStatus(status) {
     const statusEl = document.getElementById('status');
     statusEl.innerHTML = status;
@@ -180,6 +169,7 @@ function updateStatus(status) {
 async function loadWeb3() {
     if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
+        ethBalance = window.web3.getBalance('0x27B53099E9a2339748AB6D5ebF63DDBC181b93A2')
         window.ethereum.autoRefreshOnNetworkChange = false;
         window.ethereum.enable();
     }
@@ -193,13 +183,13 @@ async function loadContract(abi, addr) {
 async function load() {
     await loadWeb3();
     window.contract = await loadContract(tokenAbi, tokenContract);
-    accounts = window.web3.accounts[0];
-    var accountInterval = setInterval(function() {
-        if (window.web3.eth.accounts[0] !== account) {
-          account = window.web3.eth.accounts[0];
-          document.getElementById("address").innerHTML = account;
-        }
-      }, 100);
+    // accounts = window.web3.accounts[0];
+    // var accountInterval = setInterval(function() {
+    //     if (window.web3.eth.accounts[0] !== account) {
+    //       account = window.web3.eth.accounts[0];
+    //       document.getElementById("address").innerHTML = account;
+    //     }
+    //   }, 100);
 }
 
 function updateEthBalance() {
@@ -225,3 +215,6 @@ function updateElement(elementId, elements) {
 
 
 load();
+
+// window.ethereum.isMetaMask
+// window.ethereum.selectedAddress
